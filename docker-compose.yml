@@ -1,6 +1,7 @@
 version: '3.7'
 
-  mongo:
+services:
+  mongodb:
     image: mongo
     #restart: always
     environment:

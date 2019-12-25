@@ -46,7 +46,7 @@ public class NotifyController {
   }
 
   @DeleteMapping(value = "/all/")
-  public void deleteEvent() {
+  public void deleteAllEvents() {
     notifyService.deleteAll();
   }
 
@@ -56,7 +56,7 @@ public class NotifyController {
   }
 
   @DeleteMapping(value = "/{eventId}/attender/{email}")
-  public void createAttenderEvent(@PathVariable String eventId, @PathVariable String email) {
+  public void deleteAttenderFromEvent(@PathVariable String eventId, @PathVariable String email) {
     notifyService.deleteAttender(eventId, email);
   }
 }
