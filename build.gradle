@@ -22,8 +22,9 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    implementation 'org.springframework.cloud:spring-cloud-config-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes'
+//    implementation 'org.springframework.cloud:spring-cloud-config-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.security:spring-security-rsa'
 
@@ -35,6 +36,7 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-stream'
     implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka'
     implementation 'org.springframework.retry:spring-retry'
+    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: "${project.('lombok.version')}"
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: "${project.('lombok.version')}"

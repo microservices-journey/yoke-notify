@@ -1,26 +1,32 @@
 spring:
   application:
     name: yoke-notify
-  profiles:
-    active: dev
-  cloud:
-    config:
-      enabled: true
-      discovery:
-        enabled: true
-      failFast: true
-      retry:
-        initial-interval: 10000
-        multiplier: 1.5
-        max-attempts: 20
-        max-interval: 15000
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+#  cloud:
+#    config:
+#      uri: http://yoke-config-server:8888
+#      enabled: true
+#      discovery:
+#        enabled: true
+#      failFast: true
+#      retry:
+#        initial-interval: 10000
+#        multiplier: 1.5
+#        max-attempts: 20
+#        max-interval: 15000
+  zipkin:
+    baseUrl: ${ZIPKIN_SERVER:http://localhost:9411}
+#eureka:
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
 server:
   port: 8082
+
+logback:
+  destination:
+    url: ${LOGSTASH_HOST:localhost}
+    port: 5000
 
 
